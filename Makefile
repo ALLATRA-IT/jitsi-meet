@@ -92,3 +92,14 @@ source-package:
 	cp css/all.css source_package/jitsi-meet/css && \
 	(cd source_package ; tar cjf ../jitsi-meet.tar.bz2 jitsi-meet) && \
 	rm -rf source_package
+
+################################################################################
+
+DOCKER_IMAGE_NAME ?= allatra/jitsi-meet-web
+DOCKER_IMAGE_TAG ?= dev
+
+docker-image:
+	docker build --network=host --force-rm \
+		$(if $(call eq,$(no-cache),yes),\
+			--no-cache --pull,) \
+		-t $(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_TAG) ./

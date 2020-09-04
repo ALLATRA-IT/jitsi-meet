@@ -1,0 +1,17 @@
+/.idea/
+/*.iml
+.DS_Store
+
+/.github/
+
+/doc/
+
+/android/
+/debian/
+/ios/
+
+/build/
+/libs/
+/node_modules/
+/source_package/
+/jitsi-meet.tar.bz2
